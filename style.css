@@ -1,0 +1,704 @@
+
+/* =================================
+   RESET DAN PENGATURAN DASAR
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --daffa_blue: #4f8df9;
+    --daffa_dark: #203b65;
+    --daffa_text: #34445c;
+    --daffa_gray: #718096;
+    --daffa_light: #f1f6ff;
+    --daffa_orange: #ffb84c;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--daffa_text);
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.daffa_container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+
+/* =================================
+   NAVBAR
+================================= */
+
+#daffa_header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #edf1f7;
+}
+
+.daffa_nav {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daffa_logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--daffa_dark);
+}
+
+.daffa_logo span:first-child {
+    color: var(--daffa_blue);
+}
+
+.daffa_dot {
+    color: var(--daffa_orange);
+}
+
+.daffa_menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.daffa_menu a {
+    color: #68778c;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.daffa_menu a:hover,
+.daffa_menu a.daffa_active {
+    color: var(--daffa_blue);
+}
+
+.daffa_menu_button {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--daffa_dark);
+}
+
+
+/* =================================
+   HERO / HOME
+================================= */
+
+.daffa_hero {
+    min-height: 420px;
+    margin-top: 25px;
+    margin-bottom: 55px;
+    padding: 55px 6%;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        120deg,
+        #edf5ff,
+        #f8fbff,
+        #e3efff
+    );
+
+    overflow: hidden;
+}
+
+.daffa_eyebrow {
+    color: var(--daffa_blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.daffa_hero_text h1 {
+    color: var(--daffa_dark);
+    font-size: clamp(30px, 5vw, 49px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.daffa_hero_text h1 span {
+    color: var(--daffa_blue);
+}
+
+.daffa_hero_text h2 {
+    font-size: 16px;
+    color: #536782;
+    margin-top: 13px;
+}
+
+.daffa_intro {
+    max-width: 480px;
+    color: var(--daffa_gray);
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.daffa_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.daffa_button {
+    display: inline-block;
+    padding: 10px 19px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.daffa_button:hover {
+    transform: translateY(-3px);
+}
+
+.daffa_primary {
+    background: var(--daffa_blue);
+    color: white;
+    box-shadow: 0 7px 18px rgba(79, 141, 249, 0.25);
+}
+
+.daffa_secondary {
+    background: white;
+    color: var(--daffa_blue);
+    border: 1px solid #a9c5fa;
+}
+
+
+/* =================================
+   ILUSTRASI LAPTOP
+================================= */
+
+.daffa_hero_art {
+    height: 280px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.daffa_blob {
+    position: absolute;
+    width: 260px;
+    height: 220px;
+    background: #d3e4ff;
+    border-radius: 48% 52% 62% 38%;
+    transform: rotate(-15deg);
+}
+
+.daffa_laptop {
+    position: relative;
+    z-index: 2;
+    width: 245px;
+    transform: rotate(-5deg);
+}
+
+.daffa_screen {
+    height: 150px;
+    background: linear-gradient(135deg, #142c4d, #315b91);
+    border: 9px solid #203b60;
+    border-bottom-width: 13px;
+    border-radius: 12px 12px 5px 5px;
+
+    display: grid;
+    place-items: center;
+
+    box-shadow: 0 14px 25px rgba(25, 59, 106, 0.2);
+}
+
+.daffa_screen span {
+    font-size: 48px;
+    font-weight: 800;
+    color: #6db4ff;
+}
+
+.daffa_keyboard {
+    width: 275px;
+    height: 13px;
+    margin-left: -15px;
+    background: linear-gradient(#d9e2ee, #8799af);
+    border-radius: 2px 2px 12px 12px;
+}
+
+.daffa_sparkle {
+    position: absolute;
+    top: 15px;
+    right: 20%;
+    font-size: 30px;
+    color: var(--daffa_orange);
+}
+
+.daffa_plant {
+    position: absolute;
+    right: 2%;
+    bottom: 38px;
+    width: 40px;
+    height: 78px;
+    z-index: 3;
+}
+
+.daffa_plant b {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 30px;
+    height: 25px;
+    background: #f4a76c;
+    border-radius: 3px 3px 9px 9px;
+}
+
+.daffa_plant i {
+    position: absolute;
+    bottom: 22px;
+    left: 17px;
+    width: 14px;
+    height: 38px;
+    border-radius: 100% 0 100% 0;
+    background: #42a77c;
+    transform: rotate(-25deg);
+}
+
+.daffa_plant i:nth-child(2) {
+    transform: rotate(30deg);
+    left: 4px;
+    height: 33px;
+}
+
+.daffa_plant i:nth-child(3) {
+    transform: rotate(65deg);
+    left: 22px;
+    height: 30px;
+}
+
+
+/* =================================
+   SECTION UMUM
+================================= */
+
+.daffa_section {
+    padding-top: 35px;
+    padding-bottom: 65px;
+}
+
+.daffa_section_heading {
+    margin-bottom: 28px;
+}
+
+.daffa_section_heading h2 {
+    color: var(--daffa_dark);
+    font-size: 29px;
+    letter-spacing: -0.7px;
+}
+
+.daffa_section_desc {
+    color: var(--daffa_gray);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =================================
+   ABOUT ME
+================================= */
+
+.daffa_about_content {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 45px;
+    align-items: center;
+}
+
+.daffa_about_text h3 {
+    font-size: 17px;
+    color: var(--daffa_dark);
+    margin-bottom: 12px;
+}
+
+.daffa_about_text p {
+    font-size: 13px;
+    color: var(--daffa_gray);
+    margin-bottom: 12px;
+}
+
+.daffa_facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.daffa_facts span {
+    background: var(--daffa_light);
+    color: #4d6a91;
+    border-radius: 30px;
+    padding: 7px 13px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.daffa_profile {
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 15px;
+    background: #f1f6ff;
+    box-shadow: 0 8px 25px rgba(35, 67, 110, 0.06);
+}
+
+.daffa_avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+
+.daffa_profile h3 {
+    color: var(--daffa_dark);
+    font-size: 13px;
+}
+
+.daffa_profile p {
+    color: var(--daffa_blue);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.daffa_profile small {
+    color: #8190a5;
+    font-size: 10px;
+}
+
+
+/* =================================
+   SKILLS
+================================= */
+
+.daffa_skills_section {
+    padding: 55px 0;
+    background: #f7faff;
+}
+
+.daffa_skills_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.daffa_skill_card {
+    background: white;
+    border: 1px solid #eaf0fa;
+    border-radius: 11px;
+    padding: 20px;
+    box-shadow: 0 5px 16px rgba(41, 75, 119, 0.05);
+    transition: 0.3s;
+}
+
+.daffa_skill_card:hover {
+    transform: translateY(-5px);
+    border-color: #b9d1ff;
+}
+
+.daffa_skill_card span {
+    font-size: 25px;
+}
+
+.daffa_skill_card h3 {
+    color: var(--daffa_dark);
+    font-size: 14px;
+    margin-top: 9px;
+}
+
+.daffa_skill_card p {
+    color: var(--daffa_gray);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* =================================
+   MY PROJECTS
+================================= */
+
+.daffa_projects_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.daffa_project_card {
+    overflow: hidden;
+    border: 1px solid #e9eef6;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 22px rgba(41, 75, 119, 0.06);
+    transition: 0.3s;
+}
+
+.daffa_project_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(41, 75, 119, 0.13);
+}
+
+.daffa_project_visual {
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.daffa_visual_one {
+    background: linear-gradient(135deg, #2b5d9d, #71b9ed);
+}
+
+.daffa_visual_two {
+    background: linear-gradient(135deg, #3b9c8a, #b2d9ba);
+}
+
+.daffa_visual_three {
+    background: linear-gradient(135deg, #e69b69, #f3c9a5);
+}
+
+.daffa_project_visual b {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.daffa_project_body {
+    padding: 17px;
+}
+
+.daffa_project_body h3 {
+    font-size: 14px;
+    color: var(--daffa_dark);
+    margin-bottom: 7px;
+}
+
+.daffa_project_body p {
+    color: var(--daffa_gray);
+    font-size: 11px;
+    min-height: 55px;
+}
+
+.daffa_project_body a {
+    display: inline-block;
+    color: var(--daffa_blue);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+
+/* =================================
+   CONTACT
+================================= */
+
+.daffa_contact_section {
+    padding: 50px 0;
+    background: #1d3558;
+    color: white;
+}
+
+.daffa_contact_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.daffa_contact_content h2 {
+    font-size: 29px;
+    margin-bottom: 10px;
+}
+
+.daffa_contact_content p:not(.daffa_eyebrow) {
+    max-width: 500px;
+    font-size: 12px;
+    color: #c2cee0;
+}
+
+.daffa_contact_links {
+    display: grid;
+    gap: 13px;
+}
+
+.daffa_contact_links a {
+    color: #e0eaff;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.daffa_contact_links a:hover {
+    color: #83bdff;
+    transform: translateX(4px);
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+#daffa_footer {
+    background: #142944;
+    color: #c6d2e2;
+    padding: 20px 0;
+}
+
+.daffa_footer_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.daffa_footer_content p {
+    font-size: 11px;
+    text-align: center;
+}
+
+.daffa_footer_content > a:last-child {
+    color: #9fc5ff;
+    font-size: 11px;
+}
+
+#daffa_footer .daffa_logo {
+    color: white;
+    font-size: 17px;
+}
+
+
+/* =================================
+   RESPONSIVE / TAMPILAN HP
+================================= */
+
+@media (max-width: 750px) {
+
+    .daffa_menu_button {
+        display: block;
+    }
+
+    .daffa_menu {
+        display: none;
+
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+
+        padding: 20px 5%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+
+        background: white;
+        border-bottom: 1px solid #edf1f7;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .daffa_menu.daffa_show {
+        display: flex;
+    }
+
+    .daffa_hero {
+        grid-template-columns: 1fr;
+        padding: 40px 7%;
+    }
+
+    .daffa_hero_art {
+        height: 230px;
+        margin-top: 20px;
+    }
+
+    .daffa_about_content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .daffa_profile {
+        max-width: 300px;
+    }
+
+    .daffa_skills_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .daffa_projects_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .daffa_project_visual {
+        height: 180px;
+    }
+
+    .daffa_contact_content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .daffa_footer_content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .daffa_skills_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .daffa_hero_text h1 {
+        font-size: 32px;
+    }
+
+    .daffa_hero_art {
+        transform: scale(0.85);
+    }
+
+    .daffa_facts {
+        gap: 7px;
+    }
+
+}
